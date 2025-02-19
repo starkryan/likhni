@@ -24,7 +24,6 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({
-  id,
   title,
   description,
   url,
@@ -32,9 +31,6 @@ export function ServiceCard({
   usersCount,
   status = "operational",
   features = [],
-  tags,
-  category,
-  lastUpdated,
 }: ServiceCardProps) {
   const [showDialog, setShowDialog] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -55,6 +51,7 @@ export function ServiceCard({
       setIsSharing(true)
       await navigator.clipboard.writeText(url)
       toast.success("Link copied to clipboard")
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       toast.error("Failed to copy link")
     } finally {

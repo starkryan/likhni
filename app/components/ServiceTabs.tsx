@@ -17,26 +17,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Add type for service
-interface Service {
-  id: string
-  title: string
-  description: string
-  url: string
-  icon: string
-  usersCount: string
-  status: "operational" | "maintenance" | "issues"
-  features: string[]
-  tags: string[]
-  category: string
-  lastUpdated: string
-}
+
 
 export function ServiceTabs() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
-  const [displayedServices, setDisplayedServices] = useState<Service[]>(services);
+  const [displayedServices, setDisplayedServices] = useState(services);
 
   const [filters, setFilters] = useState({
     onlyFree: false,
@@ -45,15 +32,15 @@ export function ServiceTabs() {
     onlyOperational: false
   });
 
-  // Update the filteredServices to handle undefined values safely
+  // Filter services based on current criteria
   const filteredServices = services.filter(service => {
     const matchesCategory = selectedCategory === 'all' ? true : service.category === selectedCategory;
-    const matchesSearch = (service.title?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
-                         (service.description?.toLowerCase() || '').includes(searchQuery.toLowerCase());
+    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesFilters = (
-      (!filters.onlyFree || (service.tags || []).includes("Free")) &&
-      (!filters.noSignup || (service.tags || []).includes("No Sign-up")) &&
-      (!filters.recentlyUpdated || (service.lastUpdated || '').includes("Real-time")) &&
+      (!filters.onlyFree || service.tags.includes("Free")) &&
+      (!filters.noSignup || service.tags.includes("No Sign-up")) &&
+      (!filters.recentlyUpdated || service.lastUpdated.includes("Real-time")) &&
       (!filters.onlyOperational || service.status === "operational")
     );
     return matchesCategory && matchesSearch && matchesFilters;
