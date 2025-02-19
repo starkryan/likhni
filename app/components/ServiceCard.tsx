@@ -16,10 +16,15 @@ interface ServiceCardProps {
   description: string
   url: string
   icon: string
+  category: "government" | "banking" | "utilities" | "travel" | "education" | "healthcare" | "business"
+  rating: number
+  usersCount: string
+  lastUpdated: string
   tags?: string[]
   status?: "operational" | "maintenance" | "issues"
-  features: string[]
-  responseTime?: string
+  features?: string[]
+  responseTime: string
+  verifiedBy?: string[]
 }
 
 export function ServiceCard({
@@ -28,10 +33,15 @@ export function ServiceCard({
   description,
   url,
   icon,
+  category,
+  rating,
+  usersCount,
+  lastUpdated,
   tags = [],
   status = "operational",
-  features,
-  responseTime
+  features = [],
+  responseTime,
+  verifiedBy = []
 }: ServiceCardProps) {
   const [showDialog, setShowDialog] = useState(false)
   
@@ -95,20 +105,24 @@ export function ServiceCard({
                       </CardTitle>
                       <div className="flex items-center gap-2">
                         <div className={`w-2 h-2 rounded-full ${getStatusColor(status)}`} />
+                        <span className="text-xs text-muted-foreground">{usersCount} users</span>
                       </div>
                     </div>
                     <CardDescription className="line-clamp-2 mt-1">
                       {description}
                     </CardDescription>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {tags.slice(0, 3).map((tag, index) => (
+                    <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                      <Badge variant="default" className="text-xs font-medium">
+                        {category}
+                      </Badge>
+                      {tags.slice(0, 2).map((tag, index) => (
                         <Badge key={index} variant="secondary" className="text-xs font-medium">
                           {tag}
                         </Badge>
                       ))}
-                      {tags.length > 3 && (
+                      {tags.length > 2 && (
                         <Badge variant="secondary" className="text-xs font-medium">
-                          +{tags.length - 3} more
+                          +{tags.length - 2} more
                         </Badge>
                       )}
                     </div>
@@ -139,26 +153,23 @@ export function ServiceCard({
             </DialogHeader>
 
             <div className="mt-8 space-y-6">
-              {/* Status and Response Time */}
+              {/* Rating and Users Count */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-muted/60 hover:to-muted/40 transition-all">
-                  <p className="text-sm font-medium text-muted-foreground mb-2">Status</p>
-                  <div className="flex items-center gap-2">
-                    <div className={`w-2.5 h-2.5 rounded-full ${getStatusColor(status)} animate-pulse`} />
-                    <span className="font-medium">{getStatusText(status)}</span>
-                  </div>
+                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Rating</p>
+                  <span className="font-medium">{rating} / 5</span>
                 </div>
-                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-muted/60 hover:to-muted/40 transition-all">
-                  <p className="text-sm font-medium text-muted-foreground mb-2">Response Time</p>
-                  <span className="font-medium">{responseTime || 'N/A'}</span>
+                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Users</p>
+                  <span className="font-medium">{usersCount}</span>
                 </div>
               </div>
 
-              {/* Features */}
+              {/* Features - Moved to top */}
               {features.length > 0 && (
                 <div className="space-y-4">
-                  <h3 className="text-sm font-medium flex items-center gap-2 text-muted-foreground">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-primary" />
                     Key Features
                   </h3>
                   <ul className="grid grid-cols-1 gap-2">
@@ -175,6 +186,39 @@ export function ServiceCard({
                       </motion.li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Status and Response Time */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-muted/60 hover:to-muted/40 transition-all">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Status</p>
+                  <div className="flex items-center gap-2">
+                    <div className={`w-2.5 h-2.5 rounded-full ${getStatusColor(status)} animate-pulse`} />
+                    <span className="font-medium">{getStatusText(status)}</span>
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Last Updated</p>
+                  <span className="font-medium">{lastUpdated}</span>
+                </div>
+              </div>
+
+              {/* Verified By */}
+              {verifiedBy.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-sm font-medium text-muted-foreground">Verified By</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {verifiedBy.map((verifier, index) => (
+                      <Badge 
+                        key={index} 
+                        variant="outline"
+                        className="px-3 py-1 rounded-lg"
+                      >
+                        {verifier}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               )}
 

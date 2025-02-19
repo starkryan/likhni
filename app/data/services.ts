@@ -29,7 +29,14 @@ export const services: Service[] = [
     tags: ["Official", "Secure", "24/7"],
     status: "operational",
     verifiedBy: ["UIDAI"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Online Aadhar Card Application",
+      "Biometric Update",
+      "Address Change",
+      "Download E-Aadhar",
+      "Check Update Status"
+    ]
   },
   {
     id: "pan-card",
@@ -44,7 +51,14 @@ export const services: Service[] = [
     tags: ["Official", "Secure"],
     status: "operational",
     verifiedBy: ["Income Tax Department"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "New PAN Card Application",
+      "Correction/Update PAN Details",
+      "Track Application Status",
+      "Download e-PAN",
+      "Link PAN with Aadhar"
+    ]
   },
   {
     id: "railway-booking",
@@ -57,7 +71,14 @@ export const services: Service[] = [
     usersCount: "2M+",
     lastUpdated: "Updated daily",
     tags: ["Real-time", "Free"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Book Train Tickets",
+      "Check PNR Status",
+      "Cancel Tickets",
+      "Track Booking Status",
+      "Download Tickets"
+    ]
   },
   {
     id: "passport-renewal",
@@ -70,7 +91,13 @@ export const services: Service[] = [
     usersCount: "500k+",
     lastUpdated: "Updated daily",
     tags: ["Official", "Secure", "24/7"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Online Passport Renewal",
+      "Track Application Status",
+      "Download Passport Status",
+      "Link Aadhar with Passport"
+    ]
   },
   {
     id: "digital-id-verification",
@@ -83,7 +110,13 @@ export const services: Service[] = [
     usersCount: "1M+",
     lastUpdated: "Updated daily",
     tags: ["Official", "Secure"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Digital ID Verification",
+      "Government Services",
+      "Secure Authentication",
+      "Real-time Status"
+    ]
   },
   {
     id: "flight-tracker",
@@ -96,7 +129,13 @@ export const services: Service[] = [
     usersCount: "2M+",
     lastUpdated: "Updated daily",
     tags: ["Real-time", "Free"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Flight Tracking",
+      "Delay Information",
+      "Gate Changes",
+      "Weather Updates"
+    ]
   },
   {
     id: "smart-energy-monitor",
@@ -109,7 +148,13 @@ export const services: Service[] = [
     usersCount: "300k+",
     lastUpdated: "Updated daily",
     tags: ["Smart Home", "Savings"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Energy Monitoring",
+      "Savings Recommendations",
+      "Real-time Alerts",
+      "Usage History"
+    ]
   },
   {
     id: "digital-banking",
@@ -122,7 +167,13 @@ export const services: Service[] = [
     usersCount: "5M+",
     lastUpdated: "Updated daily",
     tags: ["Secure", "24/7"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Online Banking",
+      "Budgeting Tools",
+      "Investment Tracking",
+      "Secure Transactions"
+    ]
   },
   {
     id: "electricity-bill-payment",
@@ -135,7 +186,13 @@ export const services: Service[] = [
     usersCount: "1M+",
     lastUpdated: "Updated daily",
     tags: ["Secure", "24/7"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Electricity Bill Payment",
+      "Bill History",
+      "Payment Reminders",
+      "Payment History"
+    ]
   },
   {
     id: "water-bill-payment",
@@ -148,7 +205,13 @@ export const services: Service[] = [
     usersCount: "1M+",
     lastUpdated: "Updated daily",
     tags: ["Secure", "24/7"],
-    responseTime: ""
+    responseTime: "",
+    features: [
+      "Water Bill Payment",
+      "Bill History",
+      "Payment Reminders",
+      "Payment History"
+    ]
   },
   
   
