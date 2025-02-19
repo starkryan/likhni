@@ -1,26 +1,10 @@
 "use client"
 import { ServiceTabs } from "@/app/components/ServiceTabs"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Info, Sparkles, ChevronDown } from "lucide-react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
+import { Sparkles } from "lucide-react"
 
-// export const metadata: Metadata = {
-//   title: "Likhni | Your Essential Services Hub",
-//   description: "Access all essential Indian government and utility services in one place. Likhni makes digital services simple and accessible.",
-//   keywords: "likhni, essential services, government services, utility services, indian services",
-//   openGraph: {
-//     title: "Likhni | Your Essential Services Hub",
-//     description: "Access all essential Indian government and utility services in one place.",
-//     type: "website",
-//     url: "https://likhni.com",
-//   },
-// }
+
 
 export default function Home() {
-  const [showProTip, setShowProTip] = useState(false)
-
   return (
     <div className="min-h-screen bg-background">
       <main className="flex flex-col items-center justify-center px-4">
@@ -39,7 +23,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="max-w-[700px] mx-auto space-y-2">
+          {/* <div className="max-w-[700px] mx-auto space-y-2">
             <Button
               variant="ghost"
               className="w-full flex items-center justify-between text-primary hover:bg-primary/5 group"
@@ -86,7 +70,7 @@ export default function Home() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
 
           <div className="w-full">
             <ServiceTabs />
