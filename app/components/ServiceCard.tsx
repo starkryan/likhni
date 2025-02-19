@@ -28,7 +28,7 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({
-  id,
+  
   title,
   description,
   url,
@@ -40,7 +40,7 @@ export function ServiceCard({
   tags = [],
   status = "operational",
   features = [],
-  responseTime,
+  
   verifiedBy = []
 }: ServiceCardProps) {
   const [showDialog, setShowDialog] = useState(false)
