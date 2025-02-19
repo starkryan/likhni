@@ -38,7 +38,6 @@ export function Navbar() {
               </SheetHeader>
               <nav className="flex flex-col gap-6 mt-6">
                 <Link href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-                 
                   <span className="font-medium text-lg">Likhni</span>
                 </Link>
                 <div className="relative">
@@ -50,21 +49,12 @@ export function Navbar() {
                     aria-label="Search services"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <Link href="/services" className="px-2 py-2 hover:bg-accent rounded-md transition-colors">
-                    Services
-                  </Link>
-                  <Link href="/about" className="px-2 py-2 hover:bg-accent rounded-md transition-colors">
-                    About
-                  </Link>
-                </div>
               </nav>
             </SheetContent>
           </Sheet>
 
           {/* Desktop Logo */}
           <Link href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity md:ml-5">
-           
             <span className="font-medium">Likhni</span>
           </Link>
         </div>
@@ -84,14 +74,6 @@ export function Navbar() {
           </div>
 
           <nav className="flex items-center gap-2">
-            <div className="hidden md:flex items-center gap-2">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/services">Services</Link>
-              </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/about">About</Link>
-              </Button>
-            </div>
             <div className="flex items-center mr-5">
               <ModeToggle />
             </div>

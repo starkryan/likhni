@@ -104,10 +104,7 @@ export function ServiceCard({
                         <CardTitle className="text-lg group-hover:text-primary transition-colors">
                           {title}
                         </CardTitle>
-                        <div className="flex items-center gap-2 shrink-0">
-                          <div className={`w-2 h-2 rounded-full ${getStatusColor(status)}`} />
-                          <span className="text-xs text-muted-foreground whitespace-nowrap">{usersCount} users</span>
-                        </div>
+                       
                       </div>
                       <CardDescription className="line-clamp-2 mt-1">
                         {description}

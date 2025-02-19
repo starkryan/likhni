@@ -213,6 +213,94 @@ export const services: Service[] = [
       "Payment History"
     ]
   },
+  {
+    id: "driving-license",
+    title: "Driving License",
+    description: "Apply for new driving license or renew existing one",
+    url: "https://parivahan.gov.in/",
+    category: "government",
+    icon: "Car",
+    rating: 4.7,
+    usersCount: "50M+",
+    lastUpdated: "Real-time",
+    tags: ["Official", "Secure", "24/7"],
+    status: "operational",
+    verifiedBy: ["Ministry of Road Transport"],
+    responseTime: "",
+    features: [
+      "New License Application",
+      "License Renewal",
+      "Duplicate License",
+      "International Driving Permit",
+      "Track Application Status"
+    ]
+  },
+  {
+    id: "voter-id",
+    title: "Voter ID Card",
+    description: "Register as a voter or update your voter ID details",
+    url: "https://www.nvsp.in/",
+    category: "government",
+    icon: "Vote",
+    rating: 4.6,
+    usersCount: "100M+",
+    lastUpdated: "Daily",
+    tags: ["Official", "Free", "Secure"],
+    status: "operational",
+    verifiedBy: ["Election Commission of India"],
+    responseTime: "",
+    features: [
+      "New Voter Registration",
+      "Update Voter Details",
+      "Download e-EPIC",
+      "Search Name in Voter List",
+      "Track Application Status"
+    ]
+  },
+  {
+    id: "gst-filing",
+    title: "GST Filing",
+    description: "File GST returns and manage GST compliance",
+    url: "https://www.gst.gov.in/",
+    category: "government",
+    icon: "Receipt",
+    rating: 4.8,
+    usersCount: "20M+",
+    lastUpdated: "Real-time",
+    tags: ["Official", "Secure", "Tax"],
+    status: "operational",
+    verifiedBy: ["GST Council"],
+    responseTime: "",
+    features: [
+      "File GST Returns",
+      "GST Registration",
+      "View Filed Returns",
+      "Pay GST",
+      "Track GST Credits"
+    ]
+  },
+  {
+    id: "property-registration",
+    title: "Property Registration",
+    description: "Online property registration and document verification",
+    url: "https://ngdrs.gov.in/",
+    category: "government",
+    icon: "Building",
+    rating: 4.5,
+    usersCount: "1M+",
+    lastUpdated: "Daily",
+    tags: ["Official", "Secure"],
+    status: "operational",
+    verifiedBy: ["Ministry of Housing"],
+    responseTime: "",
+    features: [
+      "Property Registration",
+      "Document Verification",
+      "Fee Payment",
+      "Track Registration Status",
+      "Download Documents"
+    ]
+  },
   
   
   // Add more services as needed
